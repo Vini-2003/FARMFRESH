@@ -1,7 +1,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="styles.css">
-    
+    <script src = "script.js"></script>
 </head>
 <body>
     <nav class = "navigation">
@@ -18,118 +18,333 @@
                 <img src="vege1.jpg" alt="Carrot">
                 <h2>Carrot</h2>
                 <p>Fresh and organic carrots.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="carrot-quantity"><strong>Select Quantity:</strong></label>
+                    <select id="weight-carrot" class="dropdown" onchange="updatePrice(this, 'carrot-price')">
+                        <option value="0">Select</option>
+                        <option value="12">250g</option>
+                        <option value="24">500g</option>
+                        <option value="48">1kg</option>
+                    </select>
+                </p>
+                <p id="carrot-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Carrot', 'weight-carrot')">Buy Now</button>
             </div>
             <div class="product-card" id="vegetables">
                 <img src="vege2.jpg" alt="Tomato">
                 <h2>Tomato</h2>
                 <p>Juicy red tomatoes.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="tomato-quantity"><strong>Select Quantity:</strong></label>
+                    <select id="weight-tomato" class="dropdown" onchange="updatePrice(this, 'tomato-price')">
+                        <option value="0">Select</option>
+                        <option value="10">250g</option>
+                        <option value="30">500g</option>
+                        <option value="50">1kg</option>
+                    </select>
+                </p>
+                <p id="tomato-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Tomato', 'weight-tomato')">Buy Now</button>
             </div>
             <div class="product-card" id="vegetables">
-                <img src="vege3.jpg" alt="cauliflower" >
-                <h2>cauliflower</h2>
+                <img src="vege3.jpg" alt="Cauliflower">
+                <h2>Cauliflower</h2>
                 <p>Fresh and healthy cauliflower.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="cauliflower-quantity"><strong>Select Quantity:</strong></label>
+                    <select id="weight-cauliflower" class="dropdown" onchange="updatePrice(this, 'cauliflower-price')">
+                        <option value="0">Select</option>
+                        <option value="25">250g</option>
+                        <option value="50">500g</option>
+                        <option value="100">1kg</option>
+                    </select>
+                </p>
+                <p id="cauliflower-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Cauliflower', 'weight-cauliflower')">Buy Now</button>
             </div>
             <div class="product-card" id="vegetables">
                 <img src="vege4.jpg" alt="potato">
                 <h2>potato</h2>
                 <p>Rich in carbs and perfect for any dish.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-potato"><strong>Select Quantity:</strong></label>
+                    <select id="weight-potato" class="dropdown" onchange="updatePrice(this, 'potato-price')">
+                        <option value="0">Select</option>
+                        <option value="15">250g</option>
+                        <option value="30">500g</option>
+                        <option value="60">1kg</option>
+                    </select>
+                </p>
+                <p id="potato-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Potato', 'weight-potato')">Buy Now</button>
             </div>
             <div class="product-card" id="vegetables">
                 <img src="vege5.jpg" alt="peas">
-                <h2>peas</h2>
+                <h2>Peas</h2>
                 <p>Fresh and sweet peas, perfect for your meals.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-peas"><strong>Select Quantity:</strong></label>
+                    <select id="weight-peas" class="dropdown" onchange="updatePrice(this, 'peas-price')">
+                        <option value="0">Select</option>
+                        <option value="20">250g</option>
+                        <option value="40">500g</option>
+                        <option value="80">1kg</option>
+                    </select>
+                </p>
+                <p id="peas-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Peas', 'weight-peas')">Buy Now</button>
             </div>
             <div class="product-card" id="vegetables">
-                <img src="vege6.jpg" alt="garlic">
-                <h2>Bitter gourd</h2>
+                <img src="vege6.jpg" alt="bitter gourd">
+                <h2>Bitter Gourd</h2>
                 <p>Distinctive bitter flavor and health benefits.</p>
-                <button>Buy Now</button>
-            </div><div class="product-card" id="vegetables">
+                <p>
+                    <label for="bitter-gourd-quantity"><strong>Select Quantity:</strong></label>
+                    <select id="weight-bitter-gourd" class="dropdown" onchange="updatePrice(this, 'bitter-gourd-price')">
+                        <option value="0">Select</option>
+                        <option value="20">250g</option>
+                        <option value="40">500g</option>
+                        <option value="80">1kg</option>
+                    </select>
+                </p>
+                <p id="bitter-gourd-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Bitter Gourd', 'weight-bitter-gourd')">Buy Now</button>
+            </div>
+            <div class="product-card" id="vegetables">
                 <img src="vege7.jpg" alt="Onion">
                 <h2>Onion</h2>
-                <p>Flavorful taste to any dish.</p>
-                <button>Buy Now</button>
+                <p>Adds a flavorful taste to any dish.</p>
+                <p>
+                    <label for="onion-quantity"><strong>Select Quantity:</strong></label>
+                    <select id="weight-onion" class="dropdown" onchange="updatePrice(this, 'onion-price')">
+                        <option value="0">Select</option>
+                        <option value="25">250g</option>
+                        <option value="50">500g</option>
+                        <option value="100">1kg</option>
+                    </select>
+                </p>
+                <p id="onion-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Onion', 'weight-onion')">Buy Now</button>
             </div>
+            
             <div class="product-card" id="vegetables">
                 <img src="vege8.jpg" alt="chillies">
-                <h2>chillies</h2>
-                <p> Hot and spicy, perfect for adding flavor to your dishes.</p>
-                <button>Buy Now</button>
-            </div><div class="product-card" id="vegetables">
-                <img src="vege9.jpg" alt="Bottle gourd">
-                <h2>Bottle gourd</h2>
-                <p>A healthy vegetable, great for soups and stews.</p>
-                <button>Buy Now</button>
+                <h2>Chillies</h2>
+                <p>Hot and spicy, perfect for adding flavor to your dishes.</p>
+                <p>
+                    <label for="weight-chillies"><strong>Select Quantity:</strong></label>
+                    <select id="weight-chillies" class="dropdown" onchange="updatePrice(this, 'chillies-price')">
+                        <option value="0">Select</option>
+                        <option value="12">250g</option>
+                        <option value="24">500g</option>
+                        <option value="48">1kg</option>
+                    </select>
+                </p>
+                <p id="chillies-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Chillies', 'weight-chillies')">Buy Now</button>
             </div>
-            <div class="product-card" id="vegetables">
-                <img src="vege10.jpg" alt="lady's finger">
-                <h2>Lady's finger</h2>
-                <p> A nutritious vegetable rich in vitamins and fiber.</p>
-                <button>Buy Now</button>
-            </div><div class="product-card" id="vegetables">
-                <img src="vege11.jpg" alt="Apple">
+            
+            <div class="product-card" id="bottle-gourd">
+                <img src="vege9.jpg" alt="Bottle gourd">
+                <h2>Bottle Gourd</h2>
+                <p>A healthy vegetable, great for soups and stews.</p>
+                <p>
+                    <label for="weight-bottle-gourd"><strong>Select Quantity:</strong></label>
+                    <select id="weight-bottle-gourd" class="dropdown" onchange="updatePrice(this, 'bottle-gourd-price')">
+                        <option value="0">Select</option>
+                        <option value="12">250g</option>
+                        <option value="24">500g</option>
+                        <option value="48">1kg</option>
+                    </select>
+                </p>
+                <p id="bottle-gourd-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Bottle Gourd', 'weight-bottle-gourd')">Buy Now</button>
+            </div>
+
+            <div class="product-card" id="ladys-finger">
+                <img src="vege10.jpg" alt="Lady's finger">
+                <h2>Lady's Finger</h2>
+                <p>A nutritious vegetable rich in vitamins and fiber.</p>
+                <p>
+                    <label for="weight-ladys-finger"><strong>Select Quantity:</strong></label>
+                    <select id="weight-ladys-finger" class="dropdown" onchange="updatePrice(this, 'ladys-finger-price')">
+                        <option value="0">Select</option>
+                        <option value="12">250g</option>
+                        <option value="24">500g</option>
+                        <option value="48">1kg</option>
+                    </select>
+                </p>
+                <p id="ladys-finger-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Lady\'s Finger', 'weight-ladys-finger')">Buy Now</button>
+            </div>
+            
+
+            <div class="product-card" id="spinach">
+                <img src="vege11.jpg" alt="Spinach">
                 <h2>Spinach</h2>
                 <p>Fresh and rich in iron, perfect for salads and cooking.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-spinach"><strong>Select Quantity:</strong></label>
+                    <select id="weight-spinach" class="dropdown" onchange="updatePrice(this, 'spinach-price')">
+                        <option value="0">Select</option>
+                        <option value="12">250g</option>
+                        <option value="24">500g</option>
+                        <option value="48">1kg</option>
+                    </select>
+                </p>
+                <p id="spinach-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Spinach', 'weight-spinach')">Buy Now</button>
             </div>
-            <div class="product-card" id="vegetables">
+
+            <div class="product-card" id="mint-leaves">
                 <img src="vege12.jpg" alt="Mint">
-                <h2>Mint leaves</h2>
-                <p>refreshing herb with a cool, aromatic flavor.</p>
-                <button>Buy Now</button>
-            </div><div class="product-card" id="vegetables">
-                <img src="vege13.jpg" alt="corainder">
-                <h2>Corainder Leaves</h2>
-                <p>Fresh, aromatic leaves perfect for garnishing dishes.</p>
-                <button>Buy Now</button>
+                <h2>Mint Leaves</h2>
+                <p>Refreshing herb with a cool, aromatic flavor.</p>
+                <p>
+                    <label for="weight-mint"><strong>Select Quantity:</strong></label>
+                    <select id="weight-mint" class="dropdown" onchange="updatePrice(this, 'mint-price')">
+                        <option value="0">Select</option>
+                        <option value="20">250g</option>  
+                        <option value="40">500g</option> 
+                        <option value="80">1kg</option>   
+                    </select>
+                </p>
+                <p id="mint-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Mint Leaves', 'weight-mint')">Buy Now</button>
             </div>
-            <div class="product-card" id="vegetables">
+            
+            <div class="product-card" id="corainder-leaves">
+                <img src="vege13.jpg" alt="Coriander">
+                <h2>Coriander Leaves</h2>
+                <p>Fresh, aromatic leaves perfect for garnishing dishes.</p>
+                <p>
+                    <label for="weight-coriander"><strong>Select Quantity:</strong></label>
+                    <select id="weight-coriander" class="dropdown" onchange="updatePrice(this, 'coriander-price')">
+                        <option value="0">Select</option>
+                        <option value="15">250g</option>  
+                        <option value="30">500g</option>  
+                        <option value="60">1kg</option>   
+                    </select>
+                </p>
+                <p id="coriander-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Coriander Leaves', 'weight-coriander')">Buy Now</button>
+            </div>
+            
+            <div class="product-card" id="cabbage">
                 <img src="vege14.jpg" alt="Cabbage">
                 <h2>Cabbage</h2>
                 <p>Fresh and crunchy, perfect for salads and stews.</p>
-                <button>Buy Now</button>
-            </div><div class="product-card">
+                <p>
+                    <label for="weight-cabbage"><strong>Select Quantity:</strong></label>
+                    <select id="weight-cabbage" class="dropdown" onchange="updatePrice(this, 'cabbage-price')">
+                        <option value="0">Select</option>
+                        <option value="10">250g</option> 
+                        <option value="20">500g</option> 
+                        <option value="40">1kg</option>  
+                    </select>
+                </p>
+                <p id="cabbage-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Cabbage', 'weight-cabbage')">Buy Now</button>
+            </div>
+            
+            <div class="product-card" id="beans">
                 <img src="vege15.jpg" alt="Beans">
                 <h2>Beans</h2>
-                <p>Fresh and nutritious, perfect for a healthy meal.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-beans"><strong>Select Quantity:</strong></label>
+                    <select id="weight-beans" class="dropdown" onchange="updatePrice(this, 'beans-price')">
+                        <option value="0">Select</option>
+                        <option value="25">250g</option>  
+                        <option value="50">500g</option>  
+                        <option value="100">1kg</option> 
+                    </select>
+                </p>
+                <p id="beans-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Beans', 'weight-beans')">Buy Now</button>
             </div>
-            <div class="product-card" id="vegetables">
-                <img src="vege16.jpg" alt="pumpkin">
+            
+            <div class="product-card" id="pumpkin">
+                <img src="vege16.jpg" alt="Pumpkin">
                 <h2>Pumpkin</h2>
-                <p>Perfect for soups, pies, and a healthy diet</p>
-                <button>Buy Now</button>
-            </div><div class="product-card" id="vegetables">
-                <img src="vege17.jpg" alt="sweet potato">
-                <h2>Sweet potato</h2>
+                <p>Perfect for soups, pies, and a healthy diet.</p>
+                <p>
+                    <label for="weight-pumpkin"><strong>Select Quantity:</strong></label>
+                    <select id="weight-pumpkin" class="dropdown" onchange="updatePrice(this, 'pumpkin-price')">
+                        <option value="0">Select</option>
+                        <option value="18">250g</option> 
+                        <option value="36">500g</option>  
+                        <option value="72">1kg</option>   
+                    </select>
+                </p>
+                <p id="pumpkin-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Pumpkin', 'weight-pumpkin')">Buy Now</button>
+            </div>
+            
+            <div class="product-card" id="sweet-potato">
+                <img src="vege17.jpg" alt="Sweet Potato">
+                <h2>Sweet Potato</h2>
                 <p>A nutritious and sweet root vegetable.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-sweet-potato"><strong>Select Quantity:</strong></label>
+                    <select id="weight-sweet-potato" class="dropdown" onchange="updatePrice(this, 'sweet-potato-price')">
+                        <option value="0">Select</option>
+                        <option value="15">250g</option>  
+                        <option value="30">500g</option>  
+                        <option value="60">1kg</option>   
+                    </select>
+                </p>
+                <p id="sweet-potato-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Sweet Potato', 'weight-sweet-potato')">Buy Now</button>
             </div>
-            <div class="product-card" id="vegetables">
-                <img src="vege18.jpg" alt="brinjal">
+            
+            <div class="product-card" id="brinjal">
+                <img src="vege18.jpg" alt="Brinjal">
                 <h2>Brinjal</h2>
-                <p>A versatile vegetable, perfect for grilling or in curries.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-brinjal"><strong>Select Quantity:</strong></label>
+                    <select id="weight-brinjal" class="dropdown" onchange="updatePrice(this, 'brinjal-price')">
+                        <option value="0">Select</option>
+                        <option value="10">250g</option>  
+                        <option value="20">500g</option>  
+                        <option value="40">1kg</option>   
+                    </select>
+                </p>
+                <p id="brinjal-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Brinjal', 'weight-brinjal')">Buy Now</button>
             </div>
-            <div class="product-card" id="vegetables">
-                <img src="vege19.jpg" alt="ridgegourd">
-                <h2>Ridge gourd</h2>
-                <p>A healthy and refreshing vegetable for your meals.</p>
-                <button>Buy Now</button>
+            
+            <div class="product-card" id="ridge-gourd">
+                <img src="vege19.jpg" alt="Ridge Gourd">
+                <h2>Ridge Gourd</h2>
+                <p>
+                    <label for="weight-ridge-gourd"><strong>Select Quantity:</strong></label>
+                    <select id="weight-ridge-gourd" class="dropdown" onchange="updatePrice(this, 'ridge-gourd-price')">
+                        <option value="0">Select</option>
+                        <option value="18">250g</option> 
+                        <option value="36">500g</option>  
+                        <option value="72">1kg</option>  
+                    </select>
+                </p>
+                <p id="ridge-gourd-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Ridge Gourd', 'weight-ridge-gourd')">Buy Now</button>
             </div>
-            <div class="product-card" id="vegetables">
-                <img src="vege20.jpg" alt="curry leaves">
-                <h2>Curry leaves</h2>
-                <p>Fresh and aromatic, perfect for your dishes.</p>
-                <button>Buy Now</button>
-            </div>
-        </section>
-       
-    </main>
+            
+            <div class="product-card" id="curry-leaves">
+                <img src="vege20.jpg" alt="Curry Leaves">
+                <h2>Curry Leaves</h2>
+                <p>
+                    <label for="weight-curry-leaves"><strong>Select Quantity:</strong></label>
+                    <select id="weight-curry-leaves" class="dropdown" onchange="updatePrice(this, 'curry-leaves-price')">
+                        <option value="0">Select</option>
+                        <option value="10">250g</option>  
+                        <option value="20">500g</option>  
+                        <option value="40">1kg</option>   
+                    </select>
+                </p>
+                <p id="curry-leaves-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Curry Leaves', 'weight-curry-leaves')">Buy Now</button>
+            </div>            
+        </section>       
+    </main>   
 </body>
 </html>

@@ -1,7 +1,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="styles.css">
-    
+    <script src="script.js"></script>
 </head>
 <body>
     <nav class = "navigation">
@@ -15,94 +15,260 @@
     <main>     
         <section class="product-grid" >
             <div class="product-card" id="fruits">
-                <img src="f1.jpg" alt="lemon">
+                <img src="f1.jpg" alt="Lemon">
                 <h2>Lemon</h2>
                 <p>Fresh and zesty lemons, perfect for cooking and drinks.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-lemon"><strong>Select Quantity:</strong></label>
+                    <select id="weight-lemon" class="dropdown" onchange="updatePrice(this, 'lemon-price')">
+                        <option value="0">Select</option>
+                        <option value="20">250g</option>  
+                        <option value="40">500g</option>  
+                        <option value="80">1kg</option>   
+                    </select>
+                </p>
+                <p id="lemon-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Lemon', 'weight-lemon')">Buy Now</button>
             </div>
+            
             <div class="product-card" id="vegetables">
-                <img src="f2.jpg" alt="cucumber">
+                <img src="f2.jpg" alt="Cucumber">
                 <h2>Cucumber</h2>
                 <p>Fresh and hydrating, perfect for salads and snacks.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-cucumber"><strong>Select Quantity:</strong></label>
+                    <select id="weight-cucumber" class="dropdown" onchange="updatePrice(this, 'cucumber-price')">
+                        <option value="0">Select</option>
+                        <option value="15">250g</option>  
+                        <option value="30">500g</option>  
+                        <option value="60">1kg</option>   
+                    </select>
+                </p>
+                <p id="cucumber-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Cucumber', 'weight-cucumber')">Buy Now</button>
             </div>
-            <div class="product-card" id="vegetables">
-                <img src="f3.jpg" alt="Banana" >
+            
+            <div class="product-card" id="fruits">
+                <img src="f3.jpg" alt="Banana">
                 <h2>Banana</h2>
                 <p>Fresh and sweet bananas.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-banana"><strong>Select Quantity:</strong></label>
+                    <select id="weight-banana" class="dropdown" onchange="updatePrice(this, 'banana-price')">
+                        <option value="0">Select</option>
+                        <option value="20">250g</option>  
+                        <option value="40">500g</option>  
+                        <option value="80">1kg</option>   
+                    </select>
+                </p>
+                <p id="banana-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Banana', 'weight-banana')">Buy Now</button>
             </div>
-            <div class="product-card" id="vegetables">
+            
+            <div class="product-card" id="fruits">
                 <img src="f4.jpg" alt="Mango">
                 <h2>Mango</h2>
                 <p>Fresh and juicy mangoes.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-mango"><strong>Select Quantity:</strong></label>
+                    <select id="weight-mango" class="dropdown" onchange="updatePrice(this, 'mango-price')">
+                        <option value="0">Select</option>
+                        <option value="40">250g</option>  
+                        <option value="80">500g</option>  
+                        <option value="160">1kg</option>  
+                    </select>
+                </p>
+                <p id="mango-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Mango', 'weight-mango')">Buy Now</button>
             </div>
-            <div class="product-card" id="vegetables">
+            
+            <div class="product-card" id="fruits">
                 <img src="f5.jpg" alt="Papaya">
                 <h2>Papaya</h2>
                 <p>Sweet and refreshing papayas.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-papaya"><strong>Select Quantity:</strong></label>
+                    <select id="weight-papaya" class="dropdown" onchange="updatePrice(this, 'papaya-price')">
+                        <option value="0">Select</option>
+                        <option value="30">250g</option>  
+                        <option value="60">500g</option>  
+                        <option value="120">1kg</option>  
+                    </select>
+                </p>
+                <p id="papaya-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Papaya', 'weight-papaya')">Buy Now</button>
             </div>
-            <div class="product-card" id="vegetables">
+            
+            <div class="product-card" id="fruits">
                 <img src="f6.jpg" alt="Guava">
                 <h2>Guava</h2>
                 <p>Sweet and tangy guavas.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-guava"><strong>Select Quantity:</strong></label>
+                    <select id="weight-guava" class="dropdown" onchange="updatePrice(this, 'guava-price')">
+                        <option value="0">Select</option>
+                        <option value="30">250g</option>  
+                        <option value="60">500g</option> 
+                        <option value="120">1kg</option>  
+                    </select>
+                </p>
+                <p id="guava-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Guava', 'weight-guava')">Buy Now</button>
             </div>
-            <div class="product-card" id="Pomegranate">
+            
+            <div class="product-card" id="fruits">
                 <img src="f7.jpg" alt="Pomegranate">
                 <h2>Pomegranate</h2>
                 <p>Loaded with antioxidants and perfect for a healthy snack.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-pomegranate"><strong>Select Quantity:</strong></label>
+                    <select id="weight-pomegranate" class="dropdown" onchange="updatePrice(this, 'pomegranate-price')">
+                        <option value="0">Select</option>
+                        <option value="40">250g</option>  
+                        <option value="80">500g</option>  
+                        <option value="160">1kg</option>  
+                    </select>
+                </p>
+                <p id="pomegranate-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Pomegranate', 'weight-pomegranate')">Buy Now</button>
             </div>
-            <div class="product-card" id="vegetables">
+            
+            <div class="product-card" id="fruits">
                 <img src="f8.jpg" alt="Sapota">
                 <h2>Sapota</h2>
-                <p> Sweet and nutrient-rich sapotas, perfect for your health.</p>
-                <button>Buy Now</button>
+                <p>Sweet and nutrient-rich sapotas, perfect for your health.</p>
+                <p>
+                    <label for="weight-sapota"><strong>Select Quantity:</strong></label>
+                    <select id="weight-sapota" class="dropdown" onchange="updatePrice(this, 'sapota-price')">
+                        <option value="0">Select</option>
+                        <option value="25">250g</option>  
+                        <option value="50">500g</option>  
+                        <option value="100">1kg</option>  
+                    </select>
+                </p>
+                <p id="sapota-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Sapota', 'weight-sapota')">Buy Now</button>
             </div>
-            <div class="product-card" id="vegetables">
+            
+            <div class="product-card" id="fruits">
                 <img src="f9.jpg" alt="Custard apple">
                 <h2>Custard apple</h2>
                 <p>Creamy and delicious custard apples, rich in nutrients.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-custard-apple"><strong>Select Quantity:</strong></label>
+                    <select id="weight-custard-apple" class="dropdown" onchange="updatePrice(this, 'custard-apple-price')">
+                        <option value="0">Select</option>
+                        <option value="50">250g</option>  <!-- ₹50 for 250g -->
+                        <option value="100">500g</option>  <!-- ₹100 for 500g -->
+                        <option value="200">1kg</option>  <!-- ₹200 for 1kg -->
+                    </select>
+                </p>
+                <p id="custard-apple-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Custard Apple', 'weight-custard-apple')">Buy Now</button>
             </div>
-            <div class="product-card" id="vegetables">
+            
+            <div class="product-card" id="fruits">
                 <img src="f10.jpg" alt="Grapes">
-                <h2>Grapes </h2>
-                <p> Fresh and juicy grapes, perfect for a healthy snack.</p>
-                <button>Buy Now</button>
-            </div><div class="product-card" id="vegetables">
+                <h2>Grapes</h2>
+                <p>Fresh and juicy grapes, perfect for a healthy snack.</p>
+                <p>
+                    <label for="weight-grapes"><strong>Select Quantity:</strong></label>
+                    <select id="weight-grapes" class="dropdown" onchange="updatePrice(this, 'grapes-price')">
+                        <option value="0">Select</option>
+                        <option value="40">250g</option>  
+                        <option value="80">500g</option>  
+                        <option value="160">1kg</option> 
+                    </select>
+                </p>
+                <p id="grapes-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Grapes', 'weight-grapes')">Buy Now</button>
+            </div>
+            
+            <div class="product-card" id="fruits">
                 <img src="f11.jpg" alt="Jackfruit">
                 <h2>Jackfruit</h2>
                 <p>Sweet and tropical jackfruits, perfect for exotic dishes.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-jackfruit"><strong>Select Quantity:</strong></label>
+                    <select id="weight-jackfruit" class="dropdown" onchange="updatePrice(this, 'jackfruit-price')">
+                        <option value="0">Select</option>
+                        <option value="60">250g</option> 
+                        <option value="120">500g</option>  
+                        <option value="240">1kg</option> 
+                    </select>
+                </p>
+                <p id="jackfruit-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Jackfruit', 'weight-jackfruit')">Buy Now</button>
             </div>
-            <div class="product-card" id="vegetables">
+            
+            <div class="product-card" id="fruits">
                 <img src="f12.jpg" alt="Watermelon">
                 <h2>Watermelon</h2>
                 <p>Refreshing and juicy watermelons, perfect for hot days.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-watermelon"><strong>Select Quantity:</strong></label>
+                    <select id="weight-watermelon" class="dropdown" onchange="updatePrice(this, 'watermelon-price')">
+                        <option value="0">Select</option>
+                        <option value="70">250g</option>  
+                        <option value="140">500g</option>  
+                        <option value="280">1kg</option>  
+                    </select>
+                </p>
+                <p id="watermelon-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Watermelon', 'weight-watermelon')">Buy Now</button>
             </div>
-            <div class="product-card" id="vegetables">
+            
+            <div class="product-card" id="fruits">
                 <img src="f13.jpg" alt="Tamarind">
                 <h2>Tamarind</h2>
                 <p>Tangy and flavorful tamarind, perfect for chutneys and sauces.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-tamarind"><strong>Select Quantity:</strong></label>
+                    <select id="weight-tamarind" class="dropdown" onchange="updatePrice(this, 'tamarind-price')">
+                        <option value="0">Select</option>
+                        <option value="30">250g</option>  
+                        <option value="60">500g</option>  
+                        <option value="120">1kg</option>  
+                    </select>
+                </p>
+                <p id="tamarind-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Tamarind', 'weight-tamarind')">Buy Now</button>
             </div>
-            <div class="product-card" id="vegetables">
+            
+            <div class="product-card" id="fruits">
                 <img src="f14.jpg" alt="Elantha pazham">
                 <h2>Elantha pazham</h2>
-                <p>Sweet and tangy jujube fruits, rich in nutrients and flavor..</p>
-                <button>Buy Now</button>
+                <p>Sweet and tangy jujube fruits, rich in nutrients and flavor.</p>
+                <p>
+                    <label for="weight-elantha-pazham"><strong>Select Quantity:</strong></label>
+                    <select id="weight-elantha-pazham" class="dropdown" onchange="updatePrice(this, 'elantha-pazham-price')">
+                        <option value="0">Select</option>
+                        <option value="40">250g</option> 
+                        <option value="80">500g</option>  
+                        <option value="160">1kg</option> 
+                    </select>
+                </p>
+                <p id="elantha-pazham-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Elantha Pazham', 'weight-elantha-pazham')">Buy Now</button>
             </div>
-            <div class="product-card">
+            
+            <div class="product-card" id="fruits">
                 <img src="f15.jpg" alt="Amla">
                 <h2>Amla</h2>
                 <p>Rich in Vitamin C, amla is perfect for boosting immunity and health.</p>
-                <button>Buy Now</button>
+                <p>
+                    <label for="weight-amla"><strong>Select Quantity:</strong></label>
+                    <select id="weight-amla" class="dropdown" onchange="updatePrice(this, 'amla-price')">
+                        <option value="0">Select</option>
+                        <option value="50">250g</option>  
+                        <option value="100">500g</option>  
+                        <option value="200">1kg</option>  
+                    </select>
+                </p>
+                <p id="amla-price" class="price-display">Price: ₹0</p>
+                <button class="buy-now-btn" onclick="addToCart('Amla', 'weight-amla')">Buy Now</button>
             </div>
+            
         </section>
        
     </main>

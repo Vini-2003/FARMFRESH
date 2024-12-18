@@ -285,8 +285,7 @@ header section
     padding: 30px;
     flex: 5;
     max-width: 500px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-   
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .form-box:hover, .contact-info:hover ,.map:hover {
@@ -457,3 +456,50 @@ button:hover {
     color: #2d018c;
 }
 
+.price-dropdown {
+    font-size: 14px;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.price-display {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007BFF; /* Example color */
+    margin: 5px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: none;
+    padding: 10px;
+    text-align: center;
+}
+th{
+    color: #ec3c3c;
+    font-size: larger;
+}
+.cart-btn {
+    font-size: 16px;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.cart-btn:hover 
+{
+    background-color: #0056b3;
+}
+
+.cart h1{
+    font-family:cursive;
+    color: #160eaa;
+    text-align: center;
+    padding: 20px;
+    
+}
